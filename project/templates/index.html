@@ -35,134 +35,175 @@
     <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
 
     <style>
-      .hero {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+            .hero {
+              position: relative;
+              width: 100%;
+              height: 100vh;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .hero::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: url("{% static 'img/hero.jpg' %}") no-repeat center center;
+              background-size: cover;
+              animation: slowZoom 8s ease-in-out infinite;
+              z-index: 1;
+            }
+
+            .opacity-mask {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.5);
+              z-index: 2;
+            }
+
+            .slide-animated {
+              display: block;
+              opacity: 0;
+            }
+
+            .slide-animated.one {
+              animation-delay: 0.5s;
+              font-size: 16px;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              margin-bottom: 20px;
+              color: #f8f9fa;
+            }
+
+            .slide-animated.two {
+              animation-delay: 1s;
+              font-size: 3.5rem;
+              font-weight: bold;
+              line-height: 1.2;
+              margin-bottom: 30px;
+            }
+
+            .customicon-ac-room:before {
+              content: "\2744";
+              font-family: "hotel icons";
+            }
+
+            .customicon-tv:before {
+              content: "\25AD";
+              font-family: "hotel icons";
+            }
+
+            .room_btn button {
+              outline: 2px solid #978667;
+              color: #faf8f5;
+              border: none;
+              background: transparent;
+              padding: 10px 20px;
+              border-radius: 6px;
+              font-weight: 700;
+              margin-top: 10px;
+              transition: 0.3s ease-in-out;
+            }
+
+            .room_btn button:hover {
+              background-color: #978667;
+              transform: scale(1.1)
+              {% comment %} outline: 2px solid #faf8f5; {% endcomment %}
+
+            }
+
+            .social a {
+        font-size: 20px;
+        display: inline-block;
+        margin-right: 10px;
+        transition: transform 0.3s ease-in-out;
       }
 
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("{% static 'img/hero.jpg' %}") no-repeat center center;
-        background-size: cover;
-        animation: slowZoom 8s ease-in-out infinite;
-        z-index: 1;
+      .social a.instagram {
+        color: #E4405F;
       }
 
-      .opacity-mask {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 2;
+      .social a.whatsapp {
+        color: #25D366;
       }
 
-      .slide-animated {
-        display: block;
-        opacity: 0;
+      .social a.facebook {
+        color: #1877F2;
       }
 
-      .slide-animated.one {
-        animation-delay: 0.5s;
-        font-size: 16px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        color: #f8f9fa;
+      .social a.instagram:hover {
+        color: #E4405F;
+        text-shadow: 0 0 20px rgb(182, 25, 25)
       }
 
-      .slide-animated.two {
-        animation-delay: 1s;
-        font-size: 3.5rem;
-        font-weight: bold;
-        line-height: 1.2;
-        margin-bottom: 30px;
-      }
-
-      .customicon-ac-room:before {
-        content: "\2744";
-        font-family: "hotel icons";
-      }
-
-      .customicon-tv:before {
-        content: "\25AD";
-        font-family: "hotel icons";
-      }
-
-      .room_btn button {
-        outline: 2px solid #978667;
-        color: #faf8f5;
-        border: none;
-        background: transparent;
-        padding: 10px 20px;
-        border-radius: 6px;
-        font-weight: 700;
-        margin-top: 10px;
-        transition: 0.3s ease-in-out;
-      }
-
-      .room_btn button:hover {
-        background-color: #978667;
-        transform: scale(1.1)
-        {% comment %} outline: 2px solid #faf8f5; {% endcomment %}
+      .social a.whatsapp:hover {
+        color: #25D366;
+        text-shadow: 0 0 20px rgb(25, 182, 25)
 
       }
 
-      /* Slower Zoom */
-      @keyframes slowZoom {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
+      .social a.facebook:hover {
+        color: #1877F2;
+        text-shadow: 0 0 20px rgb(23, 92, 197)
+
       }
 
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .slide-animated.two {
-          font-size: 2.5rem;
-        }
-
-        .logo_normal img {
-          width: 50px;
-          height: 50px;
-        }
-
-        .slide-animated.one {
-          font-size: 14px;
-        }
+      .social a:hover {
+        transform: scale(1.2);
       }
 
-      @media (max-width: 480px) {
-        .slide-animated.two {
-          font-size: 2rem;
-        }
 
-        .room_btn button {
-        padding: 10px;
-        font-size: 12px;
-      }
-      }
-      @media (max-width: 992px) {
-        .parallax_wrapper {
-          padding: 0px;
-        }
-      }
+            /* Slower Zoom */
+            @keyframes slowZoom {
+              0% {
+                transform: scale(1);
+              }
+              50% {
+                transform: scale(1.1);
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+              .slide-animated.two {
+                font-size: 2.5rem;
+              }
+
+              .logo_normal img {
+                width: 50px;
+                height: 50px;
+              }
+
+              .slide-animated.one {
+                font-size: 14px;
+              }
+            }
+
+            @media (max-width: 480px) {
+              .slide-animated.two {
+                font-size: 2rem;
+              }
+
+              .room_btn button {
+              padding: 10px;
+              font-size: 12px;
+            }
+            }
+            @media (max-width: 992px) {
+              .parallax_wrapper {
+                padding: 0px;
+              }
+            }
     </style>
   </head>
 
@@ -496,7 +537,8 @@
 
       <div class="container margin_120_95" id="contact">
         <div class="row justify-content-between">
-          <div class="col-xl-4">
+          <!-- Contact Info -->
+          <div class="col-lg-4">
             <div data-cue="slideInUp">
               <div class="title">
                 <small>Hotel Varahi Grand</small>
@@ -528,7 +570,9 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-7">
+
+          <!-- Map -->
+          <div class="col-lg-4">
             <div data-cue="slideInUp">
               <iframe
                 src="https://www.google.com/maps?q=Hotel+Varahi+Grand,+Vijayawada&hl=en&output=embed"
@@ -540,10 +584,24 @@
               ></iframe>
             </div>
           </div>
-        </div>
 
-        <!-- /row -->
+          <!-- 360° View -->
+          <div class="col-lg-4">
+            <div data-cue="slideInUp">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sin!4v1718613500000!6m8!1m7!1sVGUbqTedvoBM5TT3jaX9bA!2m2!1d16.5201353!2d80.6001045!3f207.43!4f-3.14!5f0.7820865974627469"
+                width="100%"
+                height="350"
+                style="border: 0; border-radius: 10px"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
       </div>
+
       <!-- /container -->
     </main>
 
@@ -556,7 +614,7 @@
         ></div>
       </div>
       <div class="container">
-        <div class="row move_content">
+        <div class="row move_content pb-5">
           <div class="col-lg-4 col-md-12">
             <h5>Hotel Varahi Grand (HVG)</h5>
             <ul>
@@ -571,20 +629,8 @@
                 <strong><a href="#0">+91 1234567890</a></strong>
               </li>
             </ul>
-            <div class="social">
-              <ul>
-                <li>
-                  <a href="#0"><i class="bi bi-instagram"></i></a>
-                </li>
-                <li>
-                  <a href="#0"><i class="bi bi-whatsapp"></i></a>
-                </li>
-                <li>
-                  <a href="#0"><i class="bi bi-facebook"></i></a>
-                </li>
-              </ul>
-            </div>
           </div>
+
           <div class="col-lg-3 col-md-6 ms-lg-auto">
             <h5>Explore</h5>
             <div class="footer_links">
@@ -596,6 +642,7 @@
               </ul>
             </div>
           </div>
+
           <div class="col-lg-3 col-md-6">
             <h5>Legal</h5>
             <div class="footer_links">
@@ -605,6 +652,29 @@
                   <a href="#terms-and-conditions">Terms and Conditions</a>
                 </li>
                 <li><a href="#refund-policy">Refund Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5>Follow Us</h5>
+            <div class="social">
+              <ul>
+                <li>
+                  <a href="#0" class="instagram"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#0" class="whatsapp"
+                    ><i class="bi bi-whatsapp"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#0" class="facebook"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                </li>
               </ul>
             </div>
           </div>
@@ -619,6 +689,7 @@
         </div>
       </div>
     </footer>
+
     <!-- /footer -->
 
     <div class="progress-wrap">

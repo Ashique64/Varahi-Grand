@@ -1656,7 +1656,7 @@ footer {
 }
 footer .footer_bg {
   position: relative;
-  padding-top: 230px;
+  padding-top: 30px;
   z-index: 2;
   overflow: hidden;
 }
