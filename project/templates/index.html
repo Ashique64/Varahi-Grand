@@ -34,6 +34,8 @@
     <!-- YOUR CUSTOM CSS -->
     <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <style>
             .hero {
               position: relative;
@@ -289,7 +291,13 @@
           <div
             class="row justify-content-between flex-lg-row-reverse align-items-center"
           >
-            <div class="col-lg-5">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="500"
+              class="col-lg-5"
+            >
               <div class="parallax_wrapper">
                 <img
                   src="{% static 'img/reception.jpg' %}"
@@ -298,7 +306,13 @@
                 />
               </div>
             </div>
-            <div class="col-lg-5">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="800"
+              class="col-lg-5"
+            >
               <div class="intro">
                 <div class="title">
                   <small>About us</small>
@@ -334,16 +348,24 @@
       <!-- /Pattern  -->
 
       <div class="container margin_120_95" id="rooms">
-        <div class="title mb-3">
-          <small data-cue="slideInUp">experience</small>
-          <h2 data-cue="slideInUp" data-delay="200">Our Rooms & Suites</h2>
-        </div>
         <div
-          class="row justify-content-center add_bottom_90"
-          data-cues="slideInUp"
-          data-delay="300"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="500"
+          class="title mb-3"
         >
-          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+          <small data-cue="slideInUp">experience</small>
+          <h2 data-delay="200">Our Rooms & Suites</h2>
+        </div>
+        <div class="row justify-content-center add_bottom_90" data-delay="300">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="600"
+            class="col-xl-6 col-lg-12 col-md-12 col-sm-12"
+          >
             <a href="" class="box_cat_rooms">
               <figure>
                 <div
@@ -364,7 +386,13 @@
             </a>
           </div>
 
-          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="600"
+            class="col-xl-6 col-lg-12 col-md-12 col-sm-12"
+          >
             <a href="" class="box_cat_rooms">
               <figure>
                 <div
@@ -388,11 +416,23 @@
         </div>
         <!-- /row-->
 
-        <div class="title text-center mb-5">
-          <small data-cue="slideInUp">Hotel varahi grand</small>
-          <h2 data-cue="slideInUp" data-delay="100">Main Facilities</h2>
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="500"
+          class="title text-center mb-5"
+        >
+          <small>Hotel varahi grand</small>
+          <h2 data-delay="100">Hotel Amenities</h2>
         </div>
-        <div class="row mt-4">
+        <div
+          class="row mt-4"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="500"
+        >
           <div class="col-xl-3 col-md-6">
             <div class="box_facilities no-border" data-cue="slideInUp">
               <i class="customicon-private-parking"></i>
@@ -708,6 +748,12 @@
     <script src="{% static 'js/common_scripts.js' %}"></script>
     <script src="{% static 'js/common_functions.js' %}"></script>
     <script src="{% static 'js/datepicker_inline.js' %}"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
 
     <script>
       document.querySelectorAll(".submenu a").forEach((link) => {
