@@ -4,5 +4,7 @@ from django.shortcuts import render
 
 
 def home(request):
-    print("Home view called") 
     return render(request, 'index.html')
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
