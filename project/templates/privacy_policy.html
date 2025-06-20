@@ -33,6 +33,95 @@
 
     <!-- YOUR CUSTOM CSS -->
     <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
+
+    <style>
+      .book_btn {
+        background: #2b2063 !important;
+        transition: 0.3s ease-in-out;
+      }
+
+      .book_btn:hover {
+        background: #978667 !important;
+      }
+
+      .hamburger__inner {
+        background-color: #2b2063 !important;
+      }
+      .hamburger__inner::before {
+        background-color: #2b2063 !important;
+      }
+      .hamburger__inner::after {
+        background-color: #2b2063 !important;
+      }
+
+      .privacy_content {
+        margin-top: 80px;
+        padding: 80px 0;
+      }
+
+
+      .social a {
+        font-size: 20px;
+        display: inline-block;
+        margin-right: 10px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .social a.instagram {
+        color: #e4405f;
+      }
+
+      .social a.whatsapp {
+        color: #25d366;
+      }
+
+      .social a.facebook {
+        color: #1877f2;
+      }
+
+      .social a.instagram:hover {
+        color: #e4405f;
+        text-shadow: 0 0 20px rgb(182, 25, 25);
+      }
+
+      .social a.whatsapp:hover {
+        color: #25d366;
+        text-shadow: 0 0 20px rgb(25, 182, 25);
+      }
+
+      .social a.facebook:hover {
+        color: #1877f2;
+        text-shadow: 0 0 20px rgb(23, 92, 197);
+      }
+
+      .social a:hover {
+        transform: scale(1.2);
+      }
+
+      @media (max-width: 767px) {
+        .logo_normal img {
+          width: 105px !important;
+          height: 75px;
+        }
+        .privacy_content {
+          margin-top: 20px;
+        }
+      }
+
+      main {
+        padding: 50px 20px;
+        max-width: 1000px;
+        margin: auto;
+        color: #333;
+        line-height: 1.8;
+      }
+
+      h2,
+      h3 {
+        margin-top: 30px;
+        color: #2b2063;
+      }
+    </style>
   </head>
 
   <body>
@@ -43,15 +132,14 @@
 
     <header class="fixed_header menu_v4 submenu_version">
       <div class="layer"></div>
-      <!-- Opacity Mask -->
       <div class="container">
         <div class="row align-items-center">
           <div class="col-3">
             <a href="#home" class="logo_normal"
               ><img
-                src="{% static 'img/logo-5.png' %}"
-                width="95"
-                height="95"
+                src="{% static 'img/logo-1.png' %}"
+                width="135"
+                height="105"
                 alt="Logo"
             /></a>
           </div>
@@ -71,13 +159,17 @@
               <nav id="mainNav">
                 <ul>
                   <li class="submenu">
-                    <a href="#home" class="">Home</a>
+                    <a style="color: #2b2063" href="/">Home</a>
                   </li>
-                  <li class="submenu"><a href="#about">About</a></li>
                   <li class="submenu">
-                    <a href="#rooms" class="">Rooms & Suites</a>
+                    <a style="color: #2b2063" href="/#about">About</a>
                   </li>
-                  <li class="submenu"><a href="#contact">Contacts</a></li>
+                  <li class="submenu">
+                    <a style="color: #2b2063" href="/#rooms">Rooms & Suites</a>
+                  </li>
+                  <li class="submenu">
+                    <a style="color: #2b2063" href="/#contact">Contacts</a>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -89,9 +181,283 @@
           </div>
         </div>
       </div>
-      <!-- container -->
     </header>
-    
+
+    <main>
+      <div class="privacy_content">
+        <h2>Privacy Policy</h2>
+        <p>
+          Hotel Varahi Grand (HVG) is managed and operated by Roaming Routes. At
+          Hotel Varahi Grand, one of our main priorities is the privacy of our
+          visitors. This Privacy Policy document outlines the types of
+          information collected and how we use it.
+        </p>
+
+        <p>
+          If you have additional questions or require more information about our
+          Privacy Policy, do not hesitate to contact us.
+        </p>
+        <p>
+          This Privacy Policy applies only to our online activities and is valid
+          for visitors to our website with regards to the information that they
+          shared and/or collect in Hotel Varahi Grand. This policy is not
+          applicable to any information collected offline or via channels other
+          than this website.
+        </p>
+
+        <h3>Consent</h3>
+        <p>
+          By using our website, you consent to our Privacy Policy and agree to
+          its terms.
+        </p>
+        <p>Information we collect</p>
+        <p>
+          The personal information that you are asked to provide, and the
+          reasons why you are asked to provide it, will be made clear to you at
+          the point we ask you to provide your personal information.
+        </p>
+
+        <p>
+          If you contact us directly, we may receive additional information
+          about you such as your name, email address, phone number, the contents
+          of the message and/or attachments you may send us, and any other
+          information you may choose to provide.
+        </p>
+        <p>
+          When you register for an Account, we may ask for your contact
+          information, including items such as name, company name, address,
+          email address, and telephone number.
+        </p>
+
+        <h3>How We Use Your Information</h3>
+        <ul>
+          <li>To provide, operate, and maintain our website</li>
+          <li>To improve, personalize, and expand our website</li>
+          <li>To understand and analyze how you use our website</li>
+          <li>To develop new services and features</li>
+          <li>To communicate with you</li>
+          <li>To send you emails and prevent fraud</li>
+        </ul>
+
+        <h3>Log Files</h3>
+        <p>
+          Hotel Varahi Grand follows a standard procedure of using log files.
+          These files log visitors when they visit websites. All hosting
+          companies do this and are a part of hosting services’ analytics. The
+          information collected by log files includes internet protocol (IP)
+          addresses, browser type, Internet Service Provider (ISP), date and
+          time stamp, referring/exit pages, and possibly the number of clicks.
+          These are not linked to any information that is personally
+          identifiable. The purpose of the information is for analyzing trends,
+          administering the site, tracking users’ movement on the website, and
+          gathering demographic information.
+        </p>
+
+        <h3>Cookies and Web Beacons</h3>
+        <p>
+          Like any other website, Hotel Varahi Grand uses ‘cookies’. These
+          cookies are used to store information including visitors’ preferences,
+          and the pages on the website that the visitor accessed or visited. The
+          information is used to optimize the users’ experience by customizing
+          our web page content based on visitors browser type and/or other
+          information.
+        </p>
+
+        <h3>Advertising Partners</h3>
+        <p>
+          You may consult this list to find the Privacy Policy for each of the
+          advertising partners of Hotel Varahi Grand.
+        </p>
+        <p>
+          Third-party ad servers or ad networks uses technologies like cookies,
+          JavaScript, or Web Beacons that are used in their respective
+          advertisements and links that appear on The Hotel Varahi Grand, which
+          are sent directly to users’ browser. They automatically receive your
+          IP address when this occurs. These technologies are used to measure
+          the effectiveness of their advertising campaigns and/or to personalize
+          the advertising content that you see on websites that you visit.
+        </p>
+        <p>
+          Note that Hotel Varahi Grand has no access to or control over these
+          cookies that are used by third-party advertisers.
+        </p>
+
+        <h3>Third-Party Privacy Policies</h3>
+        <p>
+          Hotel Varahi Grand Privacy Policy does not apply to other advertisers
+          or websites. Thus, we are advising you to consult the respective
+          Privacy Policies of these third-party ad servers for more detailed
+          information. It may include their practices and instructions about how
+          to opt out of certain options.
+        </p>
+        <p>
+          You can choose to disable cookies through your individual browser
+          options. To know more detailed information about cookie management
+          with specific web browsers, it can be found on the browsers’
+          respective websites.
+        </p>
+
+        <h3>CCPA Privacy Rights</h3>
+        <p>
+          Under the CCPA, among other rights, California consumers have the
+          right to:
+        </p>
+        <p>
+          Request that a business that collects a consumer’s personal data
+          disclose the categories and specific pieces of personal data that a
+          business has collected about consumers.
+        </p>
+        <p>
+          Request that a business deletes any personal data about the consumer
+          that a business has collected.
+        </p>
+        <p>
+          Request that a business that sells a consumer’s personal data, not
+          sell the consumer’s personal data.
+        </p>
+        <p>
+          If you make a request, we have one month to respond to you. Please
+          contact us if you would like to exercise any of these rights.
+        </p>
+
+        <h3>GDPR Data Protection Rights</h3>
+        <ul>
+          <li>
+            The right to access – You have the right to request copies of your
+            personal data. We may charge you a small fee for this service.
+          </li>
+          <li>
+            The right to rectification – You have the right to request that we
+            correct any information you believe is inaccurate. You also have the
+            right to request that we complete the information you believe is
+            incomplete.
+          </li>
+          <li>
+            The right to erasure – You have the right to request that we erase
+            your personal data, under certain conditions.
+          </li>
+          <li>
+            The right to restrict processing – You have the right to request
+            that we restrict the processing of your personal data, under certain
+            conditions.
+          </li>
+          <li>
+            The right to object to processing – You have the right to object to
+            our processing of your personal data, under certain conditions.
+          </li>
+          <li>
+            The right to data portability – You have the right to request that
+            we transfer the data that we have collected to another organization,
+            or directly to you, under certain conditions.
+          </li>
+          <li>
+            If you make a request, we have one month to respond to you. If you
+            would like to exercise any of these rights, please contact us.
+          </li>
+        </ul>
+
+        <h3>Children's Information</h3>
+        <p>
+          Another part of our priority is adding protection for children while
+          using the internet. We encourage parents and guardians to observe,
+          participate in, and/or monitor and guide their online activity.
+        </p>
+        <p>
+          Hotel Varahi Grand does not knowingly collect any Personal
+          Identifiable Information from children under the age of 13. If you
+          think that your child provided this kind of information on our
+          website, we strongly encourage you to contact us immediately and we
+          will do our best efforts to promptly remove such information from our
+          records.
+        </p>
+
+      </div>
+    </main>
+
+    <footer style="position: relative">
+      <div class="footer_bg">
+        <div class="gradient_over"></div>
+        <div
+          class="background-image"
+          data-background="url(img/rooms/3.jpg)"
+        ></div>
+      </div>
+      <div class="container">
+        <div class="row move_content pb-5">
+          <div class="col-lg-4 col-md-12">
+            <h5>Hotel Varahi Grand (HVG)</h5>
+            <ul>
+              <li>
+                Your cozy and budget-friendly stay near Kanaka Durga Temple on
+                the Hyderabad–Vijayawada Highway.<br /><br />
+              </li>
+              <li>
+                <strong><a href="#0">info@varahigrand.com</a></strong>
+              </li>
+              <li>
+                <strong><a href="#0">+91 1234567890</a></strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 ms-lg-auto">
+            <h5>Explore</h5>
+            <div class="footer_links">
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#rooms">Rooms &amp; Suites</a></li>
+                <li><a href="#contact">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5>Legal</h5>
+            <div class="footer_links">
+              <ul>
+                <li><a href="/privacy_policy">Privacy Policy</a></li>
+                <li>
+                  <a href="#terms-and-conditions">Terms and Conditions</a>
+                </li>
+                <li><a href="#refund-policy">Refund Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5>Follow Us</h5>
+            <div class="social">
+              <ul>
+                <li>
+                  <a href="#0" class="instagram"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#0" class="whatsapp"
+                    ><i class="bi bi-whatsapp"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#0" class="facebook"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--/row-->
+      </div>
+      <!--/container-->
+      <div class="copy">
+        <div class="container">
+          © Hotel Varahi Grand - by
+          <a href="https://digitalroomz.com/">Digital Roomz</a>
+        </div>
+      </div>
+    </footer>
 
     <script src="{% static 'js/common_scripts.js' %}"></script>
     <script src="{% static 'js/common_functions.js' %}"></script>
